@@ -3,13 +3,14 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://Koyal86.github.io/IOT-Based-Project",
   "scripts": {
-  "dev": "vite --host :: --port 3000",
-  "build": "vite build",
-  "preview": "vite preview --host :: --port 3000",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-},
+    "dev": "vite --host :: --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --host :: --port 3000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.4",
     "@radix-ui/react-avatar": "^1.1.2",

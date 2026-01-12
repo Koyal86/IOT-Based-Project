@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // <-- Use HashRouter
 import { LocalAuthProvider, useLocalAuth } from '@/context/LocalAuthContext';
 import { Toaster } from '@/components/ui/toaster';
 import ProtectedRoute from '@/components/ProtectedRoute';
@@ -18,7 +18,9 @@ const RedirectIfAuthenticated = ({ children }) => {
     );
   }
 
-  if (currentUser) return <Navigate to="/dashboard" replace />;
+  if (currentUser) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   return children;
 };
@@ -39,7 +41,7 @@ const RootRedirect = () => {
 
 function AppRoutes() {
   return (
-    <Router basename="/IOT-Based-Project"> {/* <-- Important fix */}
+    <Router>
       <Routes>
         <Route path="/" element={<RootRedirect />} />
         <Route
