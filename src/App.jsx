@@ -18,9 +18,7 @@ const RedirectIfAuthenticated = ({ children }) => {
     );
   }
 
-  if (currentUser) {
-    return <Navigate to="/dashboard" replace />;
-  }
+  if (currentUser) return <Navigate to="/dashboard" replace />;
 
   return children;
 };
@@ -41,7 +39,7 @@ const RootRedirect = () => {
 
 function AppRoutes() {
   return (
-    <Router>
+    <Router basename="/IOT-Based-Project"> {/* <-- Important fix */}
       <Routes>
         <Route path="/" element={<RootRedirect />} />
         <Route
